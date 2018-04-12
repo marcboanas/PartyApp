@@ -13,6 +13,7 @@ import {
   ApiService,
   ArticlesService,
   AuthGuard,
+  CommentsService,
   HeaderComponent,
   JwtService,
   ProfilesService,
@@ -42,6 +43,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     ApiService,
     ArticlesService,
     AuthGuard,
+    CommentsService,
     JwtService,
     ProfilesService,
     UserService
