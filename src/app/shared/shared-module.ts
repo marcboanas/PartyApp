@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+
 import { ListErrorsComponent } from './list-errors.component';
 import { ShowAuthedDirective } from './show-authed.directive';
 
@@ -21,9 +22,9 @@ import { ShowAuthedDirective } from './show-authed.directive';
   exports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     ListErrorsComponent,
-    ReactiveFormsModule,
     RouterModule,
     ShowAuthedDirective
   ]

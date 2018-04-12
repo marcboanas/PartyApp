@@ -1,15 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { ModuleWithProviders, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
-import { ApiService, HeaderComponent, SharedModule, UserService } from './shared';
+import { ProfileModule } from './profile/profile.module';
+import { SettingsModule } from './settings/settings.module';
+import {
+  ApiService,
+  AuthGuard,
+  HeaderComponent,
+  JwtService,
+  ProfilesService,
+  SharedModule,
+  UserService
+} from './shared';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
-
 
 @NgModule({
   declarations: [
@@ -17,16 +25,21 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     HeaderComponent
   ],
   imports: [
-    AuthModule,
     BrowserModule,
+    AuthModule,
     HomeModule,
+    ProfileModule,
     rootRouting,
-    SharedModule
+    SharedModule,
+    SettingsModule
   ],
   providers: [
     ApiService,
+    AuthGuard,
+    JwtService,
+    ProfilesService,
     UserService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
