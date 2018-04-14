@@ -18,7 +18,8 @@ import {
   JwtService,
   ProfilesService,
   SharedModule,
-  UserService
+  UserService,
+  TagsService
 } from './shared';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
@@ -46,7 +47,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     CommentsService,
     JwtService,
     ProfilesService,
-    UserService
+    UserService,
+    TagsService
   ],
   bootstrap: [AppComponent]
 })
